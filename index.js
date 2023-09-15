@@ -12,6 +12,6 @@ app.use('/', categoriaController);
 const livroController = require('./controller/LivroController');
 app.use('/', livroController);
 
-app.listen(3000, ()=>{
-    console.log('Servidor Rodando na Porta 3000 - URL: http://localhost3000');
+app.listen(8080, ()=>{
+    console.log('Servidor Rodando na Porta 8080 - URL: http://localhost3000');
 }); 

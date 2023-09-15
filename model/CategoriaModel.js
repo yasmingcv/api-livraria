@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const connection = require('../database/database');
 
-const Categoria = connection.define(
+const Categoria = connection.define( // define = create table
     'tbl_categoria',
     {
         codigo_categoria:{
@@ -17,6 +17,6 @@ const Categoria = connection.define(
     }
 );
 
-Categoria.sync({force:false});
+Categoria.sync({force:false}); // force:false -> só cria se não existir, se existir ele não força.
 
 module.exports = Categoria;

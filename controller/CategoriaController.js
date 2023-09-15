@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.post('/categoria/cadastrarCategoria', (req, res)=>{
 
-    let { nome_categoria } = req.body;
+    let { nome_categoria } = req.body; //destruct - substitui oq vem do body (nome_categoria), tem o mesmo nome na tabela
 
     categoria.create(
-        {nome_categoria}
+        {nome_categoria} 
     ).then(
         ()=>{
             return res.status(201).json({
@@ -81,12 +81,12 @@ router.put('/categoria/alterarCategoria', (req, res)=>{
 }
 );
 
-router.delete('/categoria/excluirCategoria/:id', (req, res)=>{
+router.delete('/categoria/excluirCategoria/:codigo_categoria', (req, res)=>{
 
-    let {id} = req.params;
+    let {codigo_categoria} = req.params;
 
     categoria.destroy(
-        {where: {id}}
+        {where: {codigo_categoria}}
     ).then(
         ()=>{
             return res.status(200).json({
